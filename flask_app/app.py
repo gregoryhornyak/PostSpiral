@@ -13,7 +13,8 @@ print("Path of the module:", module_path)
 
 @app.route('/')
 def hello():
-    return render_template('map.html',date=datetime.datetime.strftime(datetime.datetime.now(),"%Y-%m-%d %H:%M:%S"))
+    return render_template('welcome.html')
+    #render_template('map.html',date=datetime.datetime.strftime(datetime.datetime.now(),"%Y-%m-%d %H:%M:%S"))
 
 @app.route('/test')
 def test():
