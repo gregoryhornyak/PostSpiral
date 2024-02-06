@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import subprocess
 import os
 import json
+import datetime
 
 app = Flask(__name__)
 
@@ -12,9 +13,7 @@ print("Path of the module:", module_path)
 
 @app.route('/')
 def hello():
-    return """<h1>Hello there!</h1><br>
-    <h2><a href="/loginpage">Login</a></h2>
-    <h2><a href="/loop">Letterloopd</a></h2>"""
+    return render_template('map.html',date=datetime.datetime.strftime(datetime.datetime.now(),"%Y-%m-%d %H:%M:%S"))
 
 @app.route('/test')
 def test():
@@ -31,7 +30,6 @@ def main():
 @app.route('/loop')
 def rickroll():
     return redirect('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
-
 
 @app.route('/login', methods=['POST'])
 def login():
