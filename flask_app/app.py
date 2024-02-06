@@ -69,15 +69,15 @@ def currentIssue(issueName):
                     thread = ""
                     for q in issue_data["assets"].values():
                         querier = ""
-                        if q["querier"] in users_json:  
-                            querier = users_json[q["querier"]]
+                        if q["querier"] in users_json.keys():  
+                            querier = users_json[q["querier"]]["username"]
                         else:
                             querier = q["querier"]
                         thread += querier+": "+q["question"]+"\n"
                         for a in q["answers"].values():
                             respondent = ""
-                            if a["respondent"] in users_json:  
-                                respondent = users_json[a["respondent"]]
+                            if a["respondent"] in users_json.keys():  
+                                respondent = users_json[a["respondent"]]["username"]
                             else:
                                 respondent = a["respondent"]
                             thread += respondent+": "+a["answer"]+"\n"
