@@ -65,9 +65,9 @@ def currentIssue(issueName):
                     # issue exists
                     thread = ""
                     for q in issue_data["assets"].values():
-                        thread += q["querier"]+": "+q["question"]+"\n"
+                        thread += q["querier"]+": "+q["question"]+"<br>"
                         for a in q["answers"].values():
-                            thread += a["respondent"]+": "+a["answer"]+"\n"
+                            thread += a["respondent"]+": "+a["answer"]+"<br>"
                     break
         return render_template("newsletter.html",thread=thread)
     except Exception as e:
