@@ -34,7 +34,6 @@ def rickroll():
 
 @app.route('/login', methods=['POST'])
 def login():
-    print("Real path of the users:", os.path.abspath(__file__))
     users_json = {}
     with open("/var/www/html/flask_app/users.json","r") as users:
         users_json = json.load(users)
@@ -62,9 +61,9 @@ def currentIssue(issueName):
         for nl_id,nl_data in newsletter_json.items():
             for issue_id,issue_data in nl_data["issues"].items():
                 if issue_data["name"] == issueName:
-                    return f"Found issue, which started at {issue_data['start_date']}"
+                    return f"Found issue"#, which started at {issue_data['start_date']}"
     except Exception as e:
-        return str(e)
+        return str(e), 420
     
 
 if __name__ == '__main__':
