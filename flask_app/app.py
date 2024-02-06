@@ -40,7 +40,7 @@ def rickroll():
 def login():
     print("Real path of the users:", os.path.abspath(__file__))
     users_json = {}
-    with open("users.json","r") as users:
+    with open("/var/www/html/flask_app/users.json","r") as users:
         users_json = json.load(users)
     try:
         username = request.form.get('username')
