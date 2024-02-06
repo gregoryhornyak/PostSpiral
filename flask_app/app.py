@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, send_file, request, redirect, url_for
 import subprocess
 import os
 import json
@@ -86,6 +86,13 @@ def currentIssue(issueName):
     except Exception as e:
         return str(e), 500
     
+@app.route('/pdf')
+def render_pdf():
+    # Path to your PDF file
+    pdf_file_path = 'eternal_sunshine_of_the_spotless_mind.pdf'#'/var/www/html/flask_app/templates/eternal_sunshine_of_the_spotless_mind.pdf'
+    
+    # Render the PDF file
+    return send_file(pdf_file_path, as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
