@@ -8,7 +8,7 @@ dummy_user = {'username': 'lajos', 'password': 'jelszo'}
 
 @app.route('/')
 def hello():
-    return render_template('game.html')#"<h1>Hello there!</h1><br>login: /main<br>letterloopd: /loop"
+    return "<h1>Hello there!</h1><br>login: /main<br>letterloopd: /loop"
 
 @app.route('/test')
 def test():
@@ -20,7 +20,7 @@ def structure():
 
 @app.route('/reboot')
 def restart():
-    os.system("sudo sh /home/ubuntu/upd_and_reboot_server.sh")
+    os.system("echo 'reboot' > /home/ubuntu/reboot")
     return 'restarting server'
 
 @app.route('/main')
