@@ -24,10 +24,6 @@ def test():
 def structure():
     return render_template('structure.txt')
 
-@app.route('/reboot')
-def restart():
-    return 'Not implemented'
-
 @app.route('/loginpage')
 def main():
     return render_template('main.html')
