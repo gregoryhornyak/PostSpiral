@@ -52,7 +52,7 @@ def login():
         app.logger.error(f"An error occured: {str(e)}", exc_info=True)
         return "Gebasz", 500
     
-@app.route('/readIssue/<issueName>')
+@app.route('/readIssue/<issueName>', methods=['GET'])
 def currentIssue(issueName):
     newsletter_json = {}
     with open("/var/www/html/flask_app/newsletters.json","r") as file:
@@ -84,7 +84,7 @@ def currentIssue(issueName):
                     break
         return render_template("newsletter.html",thread=thread)
     except Exception as e:
-        return str(e), 420
+        return str(e), 500
     
 
 if __name__ == '__main__':
