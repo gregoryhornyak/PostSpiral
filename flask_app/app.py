@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import subprocess
 import os
 import json
+
 app = Flask(__name__)
 
 #logging.basicConfig(filename="/home/ubuntu/flask_app/app.log", level=logging.DEBUG)
@@ -12,8 +13,8 @@ print("Path of the module:", module_path)
 @app.route('/')
 def hello():
     return """<h1>Hello there!</h1><br>
-    <a href="/loginpage">Login</a><br>
-    <a href="/loop">Letterloopd</a>"""
+    <h2><a href="/loginpage">Login</a></h2>
+    <h2><a href="/loop">Letterloopd</a></h2>"""
 
 @app.route('/test')
 def test():
