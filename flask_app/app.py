@@ -11,7 +11,7 @@ dummy_user = {'username': 'lajos', 'password': 'jelszo'}
 def hello():
     return """<h1>Hello there!</h1><br>
     <a href="/loginpage">Login</a><br>
-    <a href="/loginpage">Letterloopd</a>"""
+    <a href="/loop">Letterloopd</a>"""
 
 @app.route('/test')
 def test():
