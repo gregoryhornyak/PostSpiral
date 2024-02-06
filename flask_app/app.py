@@ -51,5 +51,10 @@ def login():
     except Exception as e:
         app.logger.error(f"An error occured: {str(e)}", exc_info=True)
         return "Gebasz", 500
+    
+@app.route('/currentIssue')
+def currentIssue():
+    return 'No current issues'
+
 if __name__ == '__main__':
     app.run(debug=True)
