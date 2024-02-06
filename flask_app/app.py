@@ -15,7 +15,6 @@ def hello():
     return """<h1>Hello there!</h1><br>
     <h2><a href="/loginpage">Login</a></h2>
     <h2><a href="/loop">Letterloopd</a></h2>"""
-    
 
 @app.route('/test')
 def test():
