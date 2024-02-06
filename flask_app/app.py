@@ -20,7 +20,7 @@ def structure():
 
 @app.route('/reboot')
 def restart():
-    os.system("echo 'reboot' > /home/ubuntu/reboot")
+    os.system("echo 'reboot' > reboot")
     return 'restarting server'
 
 @app.route('/main')
