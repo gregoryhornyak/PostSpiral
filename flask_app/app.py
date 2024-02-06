@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+import subprocess
 import os
 app = Flask(__name__)
 
@@ -20,7 +21,8 @@ def structure():
 
 @app.route('/reboot')
 def restart():
-    os.system("echo 'reboot' > reboot")
+    command = 'echo "true" > /home/ubuntu/reboot'
+    subprocess.run(command, shell=True)
     return 'restarting server'
 
 @app.route('/main')
