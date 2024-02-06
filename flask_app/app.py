@@ -21,7 +21,7 @@ def structure():
 
 @app.route('/reboot')
 def restart():
-    command = 'echo "true" > /home/ubuntu/reboot'
+    command = 'sudo /bin/sh echo "true" > /home/ubuntu/reboot'
     subprocess.run(command, shell=True)
     return 'restarting server'
 
