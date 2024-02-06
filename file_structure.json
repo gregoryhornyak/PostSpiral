@@ -1,0 +1,43 @@
+{
+    "Users":
+    {
+        "000001":{
+            "uname":"Lajos",
+            "passw":"jelszo",
+            "access_to":["Jatilla","Kistvan"]
+        },
+        "000002":{
+            "uname":"Panna",
+            "passw":"jelszo",
+            "access_to":["Jatilla"]
+        }
+    },
+    "NewsLetters":
+    {
+        "01":{
+            "name":"Jatilla",
+            "members":["000001","000002"],
+            "start_date":"2024-02-06 09:52:21.335245",
+            "interval_days":"14",
+            "issues":{
+                "01_0001":{
+                    "name": "Issue #1",
+                    "start_date":"2024-02-06 09:52:22.335245",
+                    "items":{
+                        "01_0001_01":{
+                            "question":"How are you?",
+                            "querier":"DEFAULT",
+                            "answers":{
+                                "01_0001_01_01":{
+                                    "answer": "I am doing well",
+                                    "respondent": "000002",
+                                    "time":"2024-02-07 19:12:11.035245"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
