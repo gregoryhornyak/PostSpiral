@@ -89,7 +89,7 @@ def currentIssue(issueName):
 @app.route('/pdf')
 def render_pdf():
     # Path to your PDF file
-    pdf_file_path = 'eternal_sunshine_of_the_spotless_mind.pdf'#'/var/www/html/flask_app/templates/eternal_sunshine_of_the_spotless_mind.pdf'
+    pdf_file_path = 'templates/eternal_sunshine_of_the_spotless_mind.pdf'#'/var/www/html/flask_app/templates/eternal_sunshine_of_the_spotless_mind.pdf'
     
     # Render the PDF file
     return send_file(pdf_file_path, as_attachment=True)
