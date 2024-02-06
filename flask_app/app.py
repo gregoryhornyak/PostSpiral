@@ -19,10 +19,13 @@ def test():
 def structure():
     return render_template('structure.txt')
 
+def create_restart_flag():
+    with open("/home/ubuntu/restart_flag", 'w') as file:
+        file.write('true')
+
 @app.route('/reboot')
 def restart():
-    command = 'sudo /bin/sh echo "true" > /home/ubuntu/reboot'
-    subprocess.run(command, shell=True)
+    create_restart_flag()
     return 'restarting server'
 
 @app.route('/main')
