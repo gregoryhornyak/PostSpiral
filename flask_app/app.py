@@ -6,6 +6,9 @@ app = Flask(__name__)
 
 #logging.basicConfig(filename="/home/ubuntu/flask_app/app.log", level=logging.DEBUG)
 
+module_path = os.path.abspath(__file__)
+print("Path of the module:", module_path)
+
 @app.route('/')
 def hello():
     return """<h1>Hello there!</h1><br>
