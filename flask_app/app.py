@@ -9,7 +9,9 @@ dummy_user = {'username': 'lajos', 'password': 'jelszo'}
 
 @app.route('/')
 def hello():
-    return "<h1>Hello there!</h1><br>login: /main<br>letterloopd: /loop"
+    return """<h1>Hello there!</h1><br>
+    <a href="/loginpage">Login</a><br>
+    <a href="/loginpage">Letterloopd</a>"""
 
 @app.route('/test')
 def test():
@@ -19,16 +21,11 @@ def test():
 def structure():
     return render_template('structure.txt')
 
-def create_restart_flag():
-    with open("/home/ubuntu/restart_flag", 'w') as file:
-        file.write('true')
-
 @app.route('/reboot')
 def restart():
-    create_restart_flag()
-    return 'restarting server'
+    return 'Not implemented'
 
-@app.route('/main')
+@app.route('/loginpage')
 def main():
     return render_template('main.html')
 
