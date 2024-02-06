@@ -15,11 +15,12 @@
             /* Optional: Adding some styles for better visibility */
             font-family: 'Caveat', cursive;
             font-size: 30px;
-	    text-decoration: underline;
-	    text-underline-offset: 6px;
+	        text-decoration: underline;
+	        text-underline-offset: 8px;
             color: #100f0f;
             padding: 20px;
             margin-left: 50px;
+            line-height: 170%;
         }
 
         body {
@@ -27,11 +28,38 @@
             background-repeat: no-repeat;
             background-size: cover;
           }
+        .editable {
+            color: $text-color;
+            box-shadow: 1px 1px 0 #DDDDDD;
+            display: inline-block;
+            vertical-align: top; // spacing fix: https://stackoverflow.com/a/7144960/441662
+            /*font-family: 'Marck Script', cursive;*/
+            font-family: 'Reenie Beanie', cursive;
+            font-size: $font-size;
+            line-height: $rule-height;
+            margin: 2% auto;
+            padding: $rule-padding-top $rule-height 3px $rule-padding-left;
+            resize: none;
+            min-height: 200px;
+            width: 300px;
+            background-color: $paper-color;
+            background-image: 
+              -moz-linear-gradient(top, transparent, transparent $rule-mask-height, $line-color 0px), 
+              -moz-radial-gradient(4% 50%, circle closest-corner, $hole-fill-color, $hole-fill-color 39%, transparent 0%), 
+              -moz-radial-gradient(3.9% 46%, circle closest-corner, $hole-shadow, $hole-shadow 43.5%, transparent 0%);
+            background-image: 
+              -webkit-linear-gradient(top, transparent, transparent $rule-mask-height, $line-color 0), 
+              -webkit-radial-gradient(4% 50%, circle closest-corner, $hole-fill-color, $hole-fill-color 39%, transparent 0%), 
+              -webkit-radial-gradient(3.9% 46%, circle closest-corner, $hole-shadow, $hole-shadow 43.5%, transparent 0%);
+            -webkit-background-size: 100% $rule-height;
+            background-size: 100% $rule-height;
+          }
     </style>
     <title>Jatilla</title>
 </head>
 <body>
-    <div class="rotated-text">
+
+    <div class="rotated-text" contenteditable>
         <br>
         <br>
         <br>
