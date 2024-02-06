@@ -58,10 +58,18 @@ def currentIssue(issueName):
     with open("/var/www/html/flask_app/newsletters.json","r") as file:
         newsletter_json = json.load(file)
     try:
+        thread = ""
         for nl_id,nl_data in newsletter_json.items():
             for issue_id,issue_data in nl_data["issues"].items():
                 if issue_data["name"] == issueName:
-                    return f"Found issue"#, which started at {issue_data['start_date']}"
+                    # issue exists
+                    thread = ""
+                    for q in issue_data["assets"].values():
+                        thread += q["querier"]+": "+q["question"]+"\n"
+                        for a in q["answers"].values():
+                            thread += a["respondent"]+": "+a["answer"]+"\n"
+                    break
+        return render_template("newsletter.html",thread=thread)
     except Exception as e:
         return str(e), 420
     
