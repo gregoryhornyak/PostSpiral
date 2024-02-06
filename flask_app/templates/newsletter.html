@@ -1,1 +1,5 @@
-<p>{{ thread }}</p>
+<ul>
+    {% for line in thread %}
+    <li>{{ line }}</li>
+    {% endfor %}
+</ul>

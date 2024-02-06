@@ -61,26 +61,26 @@ def currentIssue(issueName):
     with open("/var/www/html/flask_app/users.json","r") as file2:
         users_json = json.load(file2)
     try:
-        thread = ""
+        thread = []
         for nl_id,nl_data in newsletter_json.items():
             for issue_id,issue_data in nl_data["issues"].items():
                 if issue_data["name"] == issueName:
                     # issue exists
-                    thread = ""
+                    thread = []
                     for q in issue_data["assets"].values():
                         querier = ""
                         if q["querier"] in users_json.keys():  
                             querier = users_json[q["querier"]]["username"]
                         else:
                             querier = q["querier"]
-                        thread += querier+": "+q["question"]+"\n"
+                        thread.append(f'{querier}: {q["question"]}')
                         for a in q["answers"].values():
                             respondent = ""
                             if a["respondent"] in users_json.keys():  
                                 respondent = users_json[a["respondent"]]["username"]
                             else:
                                 respondent = a["respondent"]
-                            thread += respondent+": "+a["answer"]+"\n"
+                            thread.append(f'  - {respondent}: {a["answer"]}')
                     break
         return render_template("newsletter.html",thread=thread)
     except Exception as e:
