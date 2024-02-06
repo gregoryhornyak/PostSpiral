@@ -6,12 +6,6 @@ app = Flask(__name__)
 
 #logging.basicConfig(filename="/home/ubuntu/flask_app/app.log", level=logging.DEBUG)
 
-users_json = {}
-with open("./users.json","r") as users:
-    users_json = json.load(users)
-
-dummy_user = users_json
-
 @app.route('/')
 def hello():
     return """<h1>Hello there!</h1><br>
@@ -41,11 +35,14 @@ def rickroll():
 
 @app.route('/login', methods=['POST'])
 def login():
+    users_json = {}
+    with open("users.json","r") as users:
+        users_json = json.load(users)
     try:
         username = request.form.get('username')
         password = request.form.get('password')
         app.logger.debug(f"{username = }:{password = }")
-        for id,data in users_json.items():
+        for data in users_json.values():
             if username == data['username'] and password == data['password']:
             # Successful login
                 return render_template('inside.html', name=username)
