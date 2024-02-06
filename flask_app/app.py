@@ -52,7 +52,7 @@ def login():
         app.logger.error(f"An error occured: {str(e)}", exc_info=True)
         return "Gebasz", 500
     
-@app.route('/readIssue/<issueName>', methods=['GET'])
+@app.route('/readIssue/<issueName>', methods=['POST'])
 def currentIssue(issueName):
     newsletter_json = {}
     with open("/var/www/html/flask_app/newsletters.json","r") as file:
