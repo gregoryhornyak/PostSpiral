@@ -1,11 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for
 import subprocess
 import os
+import json
 app = Flask(__name__)
 
 #logging.basicConfig(filename="/home/ubuntu/flask_app/app.log", level=logging.DEBUG)
 
-dummy_user = {'username': 'lajos', 'password': 'jelszo'}
+users_json = {}
+with open("./users.json","r") as users:
+    users_json = json.load(users)
+
+dummy_user = users_json
 
 @app.route('/')
 def hello():
@@ -40,9 +45,10 @@ def login():
         username = request.form.get('username')
         password = request.form.get('password')
         app.logger.debug(f"{username = }:{password = }")
-        if username == dummy_user['username'] and password == dummy_user['password']:
+        for id,data in users_json.items():
+            if username == data['username'] and password == data['password']:
             # Successful login
-            return render_template('inside.html')
+                return render_template('inside.html', name=username)
         else:
             # Failed login
             return 'Invalid credentials. Please try again te balfasz.'
