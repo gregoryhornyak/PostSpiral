@@ -53,9 +53,19 @@ def login():
         app.logger.error(f"An error occured: {str(e)}", exc_info=True)
         return "Gebasz", 500
     
-@app.route('/currentIssue')
-def currentIssue():
-    return 'No current issues'
+@app.route('/readIssue/<issueName>')
+def currentIssue(issueName):
+    newsletter_json = {}
+    with open("/var/www/html/flask_app/newsletters.json","r") as file:
+        newsletter_json = json.load(file)
+    try:
+        for nl_id,nl_data in newsletter_json.items():
+            for issue_id,issue_data in nl_data["issues"].items():
+                if issue_data["name"] == issueName:
+                    return f"Found issue, which started at {issue_data['start_date']}"
+    except Exception as e:
+        return str(e)
+    
 
 if __name__ == '__main__':
     app.run(debug=True)
