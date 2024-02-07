@@ -8,3 +8,5 @@ Server running properly
 - temporary offline message available
 - basic login implemented
 - sample newsletter issue included
+
+END
