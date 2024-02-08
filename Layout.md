@@ -1,10 +1,10 @@
 # Layout of the process
 
-A1: **ASK** some questions
-A2: **ANSWER** all questions
-A3: **ABEYANCE** for some time
-A4: **ADDRESS** the recipients
-A5: **AGAIN**!
+- A1: **ASK** some questions
+- A2: **ANSWER** all questions
+- A3: **ABEYANCE** for some time
+- A4: **ADDRESS** the recipients
+- A5: **AGAIN**!
 
 ## Arising uncertainty
 
