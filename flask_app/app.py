@@ -35,7 +35,7 @@ def rickroll():
 @app.route('/login', methods=['POST'])
 def login():
     users_json = {}
-    with open("/var/www/html/flask_app/users.json","r") as users:
+    with open("/var/www/html/flask_app/example_users.json","r") as users:
         users_json = json.load(users)
     try:
         username = request.form.get('username')
@@ -55,10 +55,10 @@ def login():
 @app.route('/readIssue/<issueName>', methods=['POST'])
 def currentIssue(issueName):
     newsletter_json = {}
-    with open("/var/www/html/flask_app/newsletters.json","r") as file:
+    with open("/var/www/html/flask_app/example_newsletters.json","r") as file:
         newsletter_json = json.load(file)
     users_json = {}
-    with open("/var/www/html/flask_app/users.json","r") as file2:
+    with open("/var/www/html/flask_app/example_users.json","r") as file2:
         users_json = json.load(file2)
     try:
         thread = []
