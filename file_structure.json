@@ -1,22 +1,22 @@
 {
     "Users":
     {
-        "000001":{
-            "uname":"Lajos",
-            "passw":"jelszo",
-            "access_to":["Jatilla","Kistvan"]
+        "01":{
+            "uname":"John",
+            "passw":"swordfish",
+            "access_to":["OldHamptonDays","TheMoon"]
         },
-        "000002":{
-            "uname":"Panna",
-            "passw":"jelszo",
-            "access_to":["Jatilla"]
+        "02":{
+            "uname":"Sue",
+            "passw":"password123",
+            "access_to":["TheMoon"]
         }
     },
     "NewsLetters":
     {
         "01":{
-            "name":"Jatilla",
-            "members":["000001","000002"],
+            "name":"TheMoon",
+            "members":["01","02"],
             "start_date":"2024-02-06 09:52:21.335245",
             "interval_days":"14",
             "issues":{
@@ -30,7 +30,7 @@
                             "answers":{
                                 "01_0001_01_01":{
                                     "answer": "I am doing well",
-                                    "respondent": "000002",
+                                    "respondent": "02",
                                     "time":"2024-02-07 19:12:11.035245"
                                 }
                             }
