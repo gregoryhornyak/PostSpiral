@@ -1,0 +1,48 @@
+{
+    "N_01":{
+        "name":"OldHamptonDays",
+        "members":["01","02","03","04"],
+        "start_date":"2024-02-06 09:52:21.335245",
+        "interval_days":"10",
+        "issues":{
+            "I_001":{
+                "name": "Issue01",
+                "start_date":"2024-02-06 09:52:22.335245",
+                "assets":{
+                    "Q_01":{
+                        "question":"How are you?",
+                        "querier":"DEFAULT",
+                        "answers":{
+                            "A_01":{
+                                "answer": "I am doing well",
+                                "respondent": "02",
+                                "time":"2024-02-07 19:12:11.035245"
+                            },
+                            "A_02":{
+                                "answer": "I feel a little bit bad.",
+                                "respondent": "01",
+                                "time":"2024-02-08 09:12:11.035245"
+                            }
+                        }
+                    },
+                    "Q_02":{
+                        "question":"Where have you been?",
+                        "querier":"04",
+                        "answers":{
+                            "A_01":{
+                                "answer": "I have been sitting at home.",
+                                "respondent": "01",
+                                "time":"2024-02-07 19:12:11.035245"
+                            },
+                            "A_02":{
+                                "answer": "I went to the museum",
+                                "respondent": "02",
+                                "time":"2024-02-08 13:12:11.035245"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }    
+}
