@@ -49,3 +49,12 @@ Please make sure to update tests as appropriate.
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
+
+Server running properly
+- responsive for updates
+- auto-updates website
+- temporary offline message available
+- basic login implemented
+- sample newsletter issue included
+
+END
